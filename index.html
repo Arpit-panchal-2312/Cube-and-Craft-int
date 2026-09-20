@@ -1,0 +1,3126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Custom furniture designed and crafted for beautiful homes, offices and commercial spaces."
+    />
+
+    <title>Cube & Craft Int. — Crafted for Living</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =====================================================
+           RESET
+        ===================================================== */
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: #f4efe7;
+        color: #2c2722;
+        line-height: 1.6;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+      :root {
+        --beige: #f4efe7;
+        --cream: #faf7f1;
+        --sand: #ded1bf;
+        --brown: #4a382b;
+        --dark: #29231e;
+        --muted: #756b61;
+        --border: rgba(74, 56, 43, 0.15);
+        --white: #fffdf9;
+
+        --container: 1240px;
+        --radius: 4px;
+      }
+
+      /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+      .container {
+        width: min(90%, var(--container));
+        margin-inline: auto;
+      }
+
+      .section {
+        padding: 110px 0;
+      }
+
+      .eyebrow {
+        color: var(--brown);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      .section-title {
+        max-width: 760px;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 5vw, 5rem);
+        font-weight: 400;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+
+      .section-description {
+        max-width: 580px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      /* =====================================================
+           HEADER
+        ===================================================== */
+
+      .site-header {
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: white;
+      }
+
+      .nav {
+        min-height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        letter-spacing: 0.02em;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+        list-style: none;
+        font-size: 0.9rem;
+      }
+
+      .nav-links a {
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -7px;
+        width: 0;
+        height: 1px;
+        background: white;
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-button {
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        padding: 11px 20px;
+        border-radius: 50px;
+      }
+
+      .menu-button {
+        display: none;
+        border: 0;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+      /* =====================================================
+           HERO
+        ===================================================== */
+
+      .hero {
+        min-height: 100svh;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        color: white;
+
+        /*
+            =====================================================
+            ADD YOUR HERO IMAGE HERE
+            Replace:
+            images/island-kitchen.jpg
+
+            Example:
+            images/your-hero-image.jpg
+            =====================================================
+            */
+
+        background:
+          linear-gradient(
+            90deg,
+            rgba(35, 28, 22, 0.68),
+            rgba(35, 28, 22, 0.28)
+          ),
+          url("Hero3.jpg") center / cover no-repeat;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(25, 20, 16, 0.75),
+          transparent 55%
+        );
+        pointer-events: none;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 150px 0 90px;
+      }
+
+      .hero-label {
+        font-size: 0.8rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+      }
+
+      .hero-title {
+        max-width: 900px;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 6vw, 6rem);
+        line-height: 0.95;
+        font-weight: 400;
+        letter-spacing: -0.045em;
+      }
+
+      .hero-text {
+        max-width: 570px;
+        margin-top: 30px;
+        font-size: clamp(2rem, 2.5vw, 2.2rem);
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 35px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 0 25px;
+        border-radius: 50px;
+        border: 1px solid var(--brown);
+        background: var(--brown);
+        color: white;
+        transition: 0.3s ease;
+      }
+
+      .button:hover {
+        background: var(--dark);
+        transform: translateY(-2px);
+      }
+
+      .button-light {
+        border-color: rgba(255, 255, 255, 0.7);
+        background: transparent;
+      }
+
+      .button-light:hover {
+        background: white;
+        color: var(--dark);
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        right: 5%;
+        bottom: 50px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        writing-mode: vertical-rl;
+      }
+
+      /* =====================================================
+           STATS
+        ===================================================== */
+
+      .stats {
+        background: var(--cream);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .stat {
+        padding: 60px 30px;
+        text-align: center;
+        border-right: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-right: 0;
+      }
+
+      .stat-number {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 5vw, 5rem);
+        line-height: 1;
+        color: var(--brown);
+      }
+
+      .stat-label {
+        margin-top: 12px;
+        color: var(--muted);
+      }
+
+      /* =====================================================
+           ABOUT / OUR WORK
+        ===================================================== */
+
+      .work-intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: end;
+        margin-bottom: 60px;
+      }
+
+      .work-image {
+        height: 650px;
+        border-radius: var(--radius);
+      }
+
+      .work-caption {
+        margin-top: 18px;
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* =====================================================
+           CATEGORY SHOWCASE
+
+           Each category is now vertical.
+
+           Inside every category:
+           - Images are horizontal cards
+           - User can scroll RIGHT
+           - Each category can contain multiple images
+
+           ===================================================== */
+
+      .categories {
+        background: var(--dark);
+        color: white;
+      }
+
+      .categories .eyebrow {
+        color: var(--sand);
+      }
+
+      .category-intro {
+        max-width: 760px;
+        margin-bottom: 90px;
+      }
+
+      /*
+        ---------------------------------------------------------
+        CATEGORY SECTION
+        ---------------------------------------------------------
+        */
+
+      .category-section {
+        padding: 75px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .category-section:first-of-type {
+        border-top: 0;
+      }
+
+      .category-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 40px;
+        margin-bottom: 35px;
+      }
+
+      .category-meta {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .category-number {
+        color: var(--sand);
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+      }
+
+      .category-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        font-weight: 400;
+        line-height: 1.1;
+      }
+
+      .category-description {
+        max-width: 460px;
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 0.95rem;
+      }
+
+      /*
+        ---------------------------------------------------------
+        HORIZONTAL IMAGE SCROLLER
+        ---------------------------------------------------------
+        */
+
+      .category-gallery {
+        display: grid;
+        grid-auto-flow: column;
+
+        /*
+            Each image is approximately 40% of the screen.
+            More images continue horizontally.
+            */
+
+        grid-auto-columns: minmax(340px, 42%);
+
+        gap: 22px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding-bottom: 20px;
+
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-inline: contain;
+
+        scrollbar-width: thin;
+        scrollbar-color: #806b59 transparent;
+
+        cursor: grab;
+      }
+
+      .category-gallery:active {
+        cursor: grabbing;
+      }
+
+      .category-gallery::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      .category-gallery::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .category-gallery::-webkit-scrollbar-thumb {
+        background: #806b59;
+      }
+
+      .gallery-card {
+        scroll-snap-align: start;
+      }
+
+      .gallery-image {
+        width: 100%;
+        height: 520px;
+        border-radius: var(--radius);
+      }
+
+      .gallery-caption {
+        margin-top: 14px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.82rem;
+      }
+
+      /*
+        ---------------------------------------------------------
+        SMALL SCROLL ARROW
+        ---------------------------------------------------------
+        */
+
+      .gallery-scroll-note {
+        margin-top: 18px;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      /* =====================================================
+           WHY US
+        ===================================================== */
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 90px;
+      }
+
+      .why-list {
+        border-top: 1px solid var(--border);
+      }
+
+      .why-item {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        gap: 20px;
+        padding: 30px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .why-number {
+        color: var(--brown);
+        font-size: 0.85rem;
+      }
+
+      .why-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        font-weight: 400;
+      }
+
+      .why-text {
+        margin-top: 8px;
+        color: var(--muted);
+      }
+
+      /* =====================================================
+           PROCESS
+        ===================================================== */
+
+      .process {
+        background: #e7ddd0;
+      }
+
+      .process-grid {
+        margin-top: 65px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .process-item {
+        padding: 25px;
+        border-left: 1px solid var(--border);
+      }
+
+      .process-number {
+        color: var(--brown);
+        font-size: 0.8rem;
+      }
+
+      .process-title {
+        margin-top: 60px;
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        font-weight: 400;
+      }
+
+      .process-text {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* =====================================================
+           TESTIMONIALS
+        ===================================================== */
+
+      .testimonial {
+        max-width: 900px;
+        margin: 70px auto 0;
+        text-align: center;
+      }
+
+      .quote-mark {
+        font-family: "Playfair Display", serif;
+        color: var(--brown);
+        font-size: 5rem;
+        line-height: 0.6;
+      }
+
+      .quote {
+        margin-top: 25px;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 4vw, 3.4rem);
+        line-height: 1.2;
+      }
+
+      .customer {
+        margin-top: 25px;
+        color: var(--muted);
+      }
+
+      /* =====================================================
+           CTA
+        ===================================================== */
+
+      .cta {
+        padding: 120px 0;
+        background: var(--brown);
+        color: white;
+        text-align: center;
+      }
+
+      .cta-title {
+        max-width: 900px;
+        margin-inline: auto;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 6vw, 6rem);
+        line-height: 1;
+        font-weight: 400;
+      }
+
+      .cta-text {
+        max-width: 550px;
+        margin: 25px auto 35px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* =====================================================
+           FOOTER
+        ===================================================== */
+
+      .site-footer {
+        background: #29231e;
+        color: white;
+        padding: 70px 0 30px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 50px;
+      }
+
+      .footer-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+      }
+
+      .footer-description {
+        max-width: 350px;
+        margin-top: 18px;
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .footer-heading {
+        margin-bottom: 18px;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--sand);
+      }
+
+      .footer-links {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      .footer-bottom {
+        margin-top: 70px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.8rem;
+      }
+
+      /* =====================================================
+           RESPONSIVE — TABLET
+        ===================================================== */
+
+      @media (max-width: 900px) {
+        .section {
+          padding: 80px 0;
+        }
+
+        .nav-links {
+          position: fixed;
+          inset: 0;
+          background: var(--dark);
+          flex-direction: column;
+          justify-content: center;
+          gap: 28px;
+
+          transform: translateX(100%);
+          transition: transform 0.35s ease;
+        }
+
+        .nav-links.active {
+          transform: translateX(0);
+        }
+
+        .menu-button {
+          display: block;
+          position: relative;
+          z-index: 30;
+        }
+
+        .work-intro,
+        .why-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .work-image {
+          height: 500px;
+        }
+
+        .category-top {
+          display: block;
+        }
+
+        .category-description {
+          margin-top: 20px;
+        }
+
+        .category-gallery {
+          grid-auto-columns: 55%;
+        }
+
+        .gallery-image {
+          height: 450px;
+        }
+
+        .process-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* =====================================================
+           RESPONSIVE — PHONE
+        ===================================================== */
+
+      @media (max-width: 600px) {
+        .container {
+          width: min(92%, 1240px);
+        }
+
+        .section {
+          padding: 65px 0;
+        }
+
+        .hero-content {
+          padding: 130px 0 65px;
+        }
+
+        .hero-title {
+          font-size: clamp(3rem, 15vw, 5rem);
+        }
+
+        .hero-text {
+          font-size: 0.95rem;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .scroll-indicator {
+          display: none;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stat {
+          padding: 35px 20px;
+          border-right: 0;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+          border-bottom: 0;
+        }
+
+        .work-intro {
+          margin-bottom: 35px;
+        }
+
+        .work-image {
+          height: 380px;
+        }
+
+        /*
+            -----------------------------------------------------
+            MOBILE CATEGORY GALLERY
+            -----------------------------------------------------
+
+            Images become wider on mobile so the user clearly
+            understands that they can swipe horizontally.
+            -----------------------------------------------------
+            */
+
+        .category-section {
+          padding: 55px 0;
+        }
+
+        .category-gallery {
+          grid-auto-columns: 82%;
+          gap: 15px;
+        }
+
+        .gallery-image {
+          height: 400px;
+        }
+
+        .gallery-caption {
+          display: block;
+        }
+
+        .gallery-caption span {
+          display: block;
+        }
+
+        .why-item {
+          grid-template-columns: 35px 1fr;
+          gap: 10px;
+        }
+
+        .process-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .process-item {
+          border-left: 0;
+          border-bottom: 1px solid var(--border);
+          padding: 25px 0;
+        }
+
+        .process-title {
+          margin-top: 30px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          margin-top: 45px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+      <div class="container nav">
+        <!-- EDIT CONTENT HERE: Website / company name -->
+        <a href="#" class="logo"> Cube & Craft int. </a>
+
+        <button
+          class="menu-button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li>
+              <a href="#about">About</a>
+            </li>
+
+            <li>
+              <a href="#work">Our Work</a>
+            </li>
+
+            <li>
+              <a href="#categories">Furniture</a>
+            </li>
+
+            <li>
+              <a href="#process">Process</a>
+            </li>
+
+            <li>
+              <a href="#contact" class="nav-button"> Contact </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- =================================================
+             HERO
+        ================================================== -->
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-content">
+          <!-- EDIT CONTENT HERE -->
+          <p class="hero-label">Furniture · Interiors · Craftsmanship</p>
+
+          <!-- EDIT CONTENT HERE -->
+          <h1 id="hero-title" class="hero-title">
+            Where ancient Craftsmanship meets modern living.
+          </h1>
+
+          <!-- EDIT CONTENT HERE -->
+          <p class="hero-text">
+            From the hands of Vishwakarma to the Heart of your home.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="button"> Explore Our Work </a>
+
+            <a href="#contact" class="button button-light"> Start a Project </a>
+          </div>
+        </div>
+
+        <span class="scroll-indicator"> Scroll to explore ↓ </span>
+      </section>
+
+      <!-- =================================================
+             STATS
+        ================================================== -->
+
+      <section class="stats" aria-label="Company statistics">
+        <div class="container stats-grid">
+          <article class="stat">
+            <!-- EDIT CONTENT HERE -->
+            <strong class="stat-number"> 150+ </strong>
+
+            <!-- EDIT CONTENT HERE -->
+            <p class="stat-label">Projects Completed</p>
+          </article>
+
+          <article class="stat">
+            <!-- EDIT CONTENT HERE -->
+            <strong class="stat-number"> 120+ </strong>
+
+            <!-- EDIT CONTENT HERE -->
+            <p class="stat-label">Happy Customers</p>
+          </article>
+
+          <article class="stat">
+            <!-- EDIT CONTENT HERE -->
+            <strong class="stat-number"> 8+ </strong>
+
+            <!-- EDIT CONTENT HERE -->
+            <p class="stat-label">Years of Craftsmanship</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================================================
+             ABOUT / OUR WORK
+        ================================================== -->
+
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+          <div class="work-intro">
+            <div>
+              <p class="eyebrow">About us</p>
+
+              <!-- EDIT CONTENT HERE -->
+              <h2 id="about-title" class="section-title">
+                Furniture with a purpose.
+              </h2>
+            </div>
+
+            <div>
+              <!-- EDIT CONTENT HERE -->
+              <p class="section-description">
+                We believe furniture should do more than fill a room. It should
+                make the space comfortable, functional and unmistakably yours.
+              </p>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="section-description">
+                From the first sketch to the final finish, we bring together
+                thoughtful design, quality materials and skilled craftsmanship.
+              </p>
+            </div>
+          </div>
+
+          <figure>
+            <!--
+                    =================================================
+                    ADD YOUR IMAGE HERE
+
+                    Replace this sample image with your own:
+
+                    images/about-workshop.jpg
+
+                    =================================================
+                    -->
+
+            <img
+              class="work-image"
+              src="Craft.png"
+              alt="Furniture craftsmanship and workshop"
+              loading="lazy"
+            />
+
+            <figcaption class="work-caption">
+              <!-- EDIT CONTENT HERE -->
+              <span> Designed with intention. </span>
+
+              <!-- EDIT CONTENT HERE -->
+              <span> Crafted with care. </span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- =================================================
+             FURNITURE CATEGORIES
+
+             IMPORTANT:
+
+             Categories are now VERTICAL.
+
+             Each category contains a HORIZONTAL
+             right-scrollable image gallery.
+
+             TOTAL SAMPLE IMAGES:
+             10
+
+             1  Hero image
+             2  About image
+             3  Kitchen
+             4  Bedroom
+             5  Living room
+             6  Dining
+             7  Wardrobe
+             8  TV unit
+             9  Office
+             10 Custom furniture
+
+             You can replace all images later.
+        ================================================== -->
+
+      <section
+        id="categories"
+        class="section categories"
+        aria-labelledby="categories-title"
+      >
+        <div class="container">
+          <div class="category-intro">
+            <p class="eyebrow">What we create</p>
+
+            <!-- EDIT CONTENT HERE -->
+            <h2 id="categories-title" class="section-title">
+              Furniture for every space.
+            </h2>
+
+            <!-- EDIT CONTENT HERE -->
+            <p class="section-description">
+              Explore our furniture categories. Each collection can be browsed
+              horizontally to discover different designs, finishes and
+              possibilities.
+            </p>
+          </div>
+
+          <!-- =================================================
+                     CATEGORY 01 — MODULAR KITCHENS
+                ================================================== -->
+
+          <article class="category-section">
+            <div class="category-top">
+              <div>
+                <div class="category-meta">
+                  <span class="category-number"> 01 </span>
+
+                  <!-- EDIT CONTENT HERE -->
+                  <h3 class="category-title">Modular Kitchens</h3>
+                </div>
+              </div>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="category-description">
+                Functional kitchens designed around the way you cook, organise
+                and live.
+              </p>
+            </div>
+
+            <div class="category-gallery">
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen1.jpg"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 01 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen2.jpg"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 02 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen3.jpg"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 03 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen4.png"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 04 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen5.jpg"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 05 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen6.png"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 06 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen7.jpg"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 07 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen8.jpg"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 08 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen9.jpg"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 09 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: MODULAR KITCHENS
+                            IMAGE 03
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Modular Kitchens 1\Kitchen10.jpg"
+                  alt="Modern modular kitchen"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Modern Kitchen </span>
+
+                  <span> 01 / 10 </span>
+                </div>
+              </div>
+
+              <!--
+                        ADD MORE KITCHEN IMAGES HERE
+
+                        Copy the gallery-card above and change
+                        the image path.
+
+                        Example:
+                        images/kitchen-02.jpg
+                        images/kitchen-03.jpg
+                        -->
+            </div>
+
+            <p class="gallery-scroll-note">Swipe / scroll right →</p>
+          </article>
+
+          <!-- =================================================
+                     CATEGORY 02 — BEDROOMS
+                ================================================== -->
+
+          <article class="category-section">
+            <div class="category-top">
+              <div>
+                <div class="category-meta">
+                  <span class="category-number"> 02 </span>
+
+                  <!-- EDIT CONTENT HERE -->
+                  <h3 class="category-title">Bedrooms</h3>
+                </div>
+              </div>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="category-description">
+                Calm, comfortable bedroom furniture designed for everyday
+                living.
+              </p>
+            </div>
+
+            <div class="category-gallery">
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom1.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 01 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom2.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 02 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom3.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 03 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom4.png"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 04 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom5.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 05 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom6.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 06 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom7.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 07 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom8.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 08 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom9.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 09 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom10.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 10 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom11.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 11 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: BEDROOM
+                            IMAGE 04
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Master Bedrooms 2\Bedroom12.jpg"
+                  alt="Contemporary bedroom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Contemporary Bedroom </span>
+
+                  <span> 02 / 12 </span>
+                </div>
+              </div>
+
+              <!-- ADD MORE BEDROOM IMAGES HERE -->
+            </div>
+
+            <p class="gallery-scroll-note">Swipe / scroll right →</p>
+          </article>
+
+          <!-- =================================================
+                     CATEGORY 03 — LIVING ROOMS
+                ================================================== -->
+
+          <article class="category-section">
+            <div class="category-top">
+              <div>
+                <div class="category-meta">
+                  <span class="category-number"> 03 </span>
+
+                  <!-- EDIT CONTENT HERE -->
+                  <h3 class="category-title">Living Rooms</h3>
+                </div>
+              </div>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="category-description">
+                Elegant living spaces with furniture made for conversation,
+                comfort and connection.
+              </p>
+            </div>
+
+            <div class="category-gallery">
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR1.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 01 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR2.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 02 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR3.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 03 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR4.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 04 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR5.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 05 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR6.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 06 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR7.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 07 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR8.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 08 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR9.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 09 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR10.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 10 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: LIVING ROOM
+                            IMAGE 05
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Living Rooms 3\LR11.jpg"
+                  alt="Elegant living room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Living Room </span>
+
+                  <span> 03 / 11 </span>
+                </div>
+              </div>
+
+              <!-- ADD MORE LIVING ROOM IMAGES HERE -->
+            </div>
+
+            <p class="gallery-scroll-note">Swipe / scroll right →</p>
+          </article>
+
+          <!-- =================================================
+                     CATEGORY 04 — DINING
+                ================================================== -->
+
+          <article class="category-section">
+            <div class="category-top">
+              <div>
+                <div class="category-meta">
+                  <span class="category-number"> 04 </span>
+
+                  <!-- EDIT CONTENT HERE -->
+                  <h3 class="category-title">Dining Spaces</h3>
+                </div>
+              </div>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="category-description">
+                Dining furniture designed to make everyday meals and special
+                gatherings feel memorable.
+              </p>
+            </div>
+
+            <div class="category-gallery">
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining1.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 01 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining2.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 02 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining3.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 03 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining4.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 04 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining5.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 05 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining6.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 06 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining7.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 07 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining8.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 08 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining9.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 09 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining10.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 10 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: DINING
+                            IMAGE 06
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Dining Spaces 4\Dining11.jpg"
+                  alt="Dining room furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Dining Space </span>
+
+                  <span> 04 / 11 </span>
+                </div>
+              </div>
+
+              <!-- ADD MORE DINING IMAGES HERE -->
+            </div>
+
+            <p class="gallery-scroll-note">Swipe / scroll right →</p>
+          </article>
+
+          <!-- =================================================
+                     CATEGORY 05 — WARDROBES
+                ================================================== -->
+
+          <article class="category-section">
+            <div class="category-top">
+              <div>
+                <div class="category-meta">
+                  <span class="category-number"> 05 </span>
+
+                  <!-- EDIT CONTENT HERE -->
+                  <h3 class="category-title">Wardrobes & Storage</h3>
+                </div>
+              </div>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="category-description">
+                Smart storage solutions designed to keep your space organised
+                without compromising on style.
+              </p>
+            </div>
+
+            <div class="category-gallery">
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: WARDROBES
+                            IMAGE 07
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Wardrobes & Storage 5\Ward1.jpg"
+                  alt="Custom wardrobe"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom Wardrobe </span>
+
+                  <span> 05 / 01 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: WARDROBES
+                            IMAGE 07
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Wardrobes & Storage 5\Ward2.jpg"
+                  alt="Custom wardrobe"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom Wardrobe </span>
+
+                  <span> 05 / 02 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: WARDROBES
+                            IMAGE 07
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Wardrobes & Storage 5\Ward3.jpg"
+                  alt="Custom wardrobe"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom Wardrobe </span>
+
+                  <span> 05 / 03 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: WARDROBES
+                            IMAGE 07
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Wardrobes & Storage 5\Ward4.jpg"
+                  alt="Custom wardrobe"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom Wardrobe </span>
+
+                  <span> 05 / 04 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: WARDROBES
+                            IMAGE 07
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Wardrobes & Storage 5\Ward5.jpg"
+                  alt="Custom wardrobe"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom Wardrobe </span>
+
+                  <span> 05 / 05 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: WARDROBES
+                            IMAGE 07
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Wardrobes & Storage 5\Ward6.jpg"
+                  alt="Custom wardrobe"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom Wardrobe </span>
+
+                  <span> 05 / 06 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: WARDROBES
+                            IMAGE 07
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Wardrobes & Storage 5\Ward7.png"
+                  alt="Custom wardrobe"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom Wardrobe </span>
+
+                  <span> 05 / 07 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: WARDROBES
+                            IMAGE 07
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Wardrobes & Storage 5\Ward8.jpg"
+                  alt="Custom wardrobe"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom Wardrobe </span>
+
+                  <span> 05 / 08 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: WARDROBES
+                            IMAGE 07
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Wardrobes & Storage 5\Ward9.jpg"
+                  alt="Custom wardrobe"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom Wardrobe </span>
+
+                  <span> 05 / 09 </span>
+                </div>
+              </div>
+              <!-- ADD MORE WARDROBE IMAGES HERE -->
+            </div>
+
+            <p class="gallery-scroll-note">Swipe / scroll right →</p>
+          </article>
+
+          <!-- =================================================
+                     CATEGORY 06 — TV UNITS
+                ================================================== -->
+
+          <article class="category-section">
+            <div class="category-top">
+              <div>
+                <div class="category-meta">
+                  <span class="category-number"> 06 </span>
+
+                  <!-- EDIT CONTENT HERE -->
+                  <h3 class="category-title">TV Units</h3>
+                </div>
+              </div>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="category-description">
+                Clean, practical entertainment units that bring technology
+                naturally into your room.
+              </p>
+            </div>
+
+            <div class="category-gallery">
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: TV UNITS
+                            IMAGE 08
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\TV unit 6\IMG-20260915-WA0100.jpg"
+                  alt="Custom TV unit"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom TV Unit </span>
+
+                  <span> 06 / 01 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: TV UNITS
+                            IMAGE 08
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\TV unit 6\IMG-20260915-WA0104.jpg"
+                  alt="Custom TV unit"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom TV Unit </span>
+
+                  <span> 06 / 02 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: TV UNITS
+                            IMAGE 08
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\TV unit 6\IMG-20260915-WA0103[1].jpg"
+                  alt="Custom TV unit"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom TV Unit </span>
+
+                  <span> 06 / 03 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: TV UNITS
+                            IMAGE 08
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\TV unit 6\ChatGPT Image Aug 31, 2026, 04_46_45 PM.png"
+                  alt="Custom TV unit"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom TV Unit </span>
+
+                  <span> 06 / 04 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: TV UNITS
+                            IMAGE 08
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\TV unit 6\ChatGPT Image Aug 18, 2026, 11_43_32 AM.png"
+                  alt="Custom TV unit"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom TV Unit </span>
+
+                  <span> 06 / 05 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: TV UNITS
+                            IMAGE 08
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\TV unit 6\34bce648-3068-4dd3-80d9-f8594cb67dc3.png"
+                  alt="Custom TV unit"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Custom TV Unit </span>
+
+                  <span> 06 / 06 </span>
+                </div>
+              </div>
+
+              <!-- ADD MORE TV UNIT IMAGES HERE -->
+            </div>
+
+            <p class="gallery-scroll-note">Swipe / scroll right →</p>
+          </article>
+
+          <!-- =================================================
+                     CATEGORY 07 — CORPORATE FURNITURE
+                ================================================== -->
+
+          <article class="category-section">
+            <div class="category-top">
+              <div>
+                <div class="category-meta">
+                  <span class="category-number"> 07 </span>
+
+                  <!-- EDIT CONTENT HERE -->
+                  <h3 class="category-title">Corporate Furniture</h3>
+                </div>
+              </div>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="category-description">
+                Professional workspaces designed for productivity, collaboration
+                and comfort.
+              </p>
+            </div>
+
+            <div class="category-gallery">
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: CORPORATE
+                            IMAGE 09
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Corporate furniture 7\fd07310fdb7e4d0561c8c376e9e811a2.jpg"
+                  alt="Modern corporate office furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Corporate Workspace </span>
+
+                  <span> 07 / 01 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: CORPORATE
+                            IMAGE 09
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Corporate furniture 7\d48fa095c4203355456d70b560df866e.jpg"
+                  alt="Modern corporate office furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Corporate Workspace </span>
+
+                  <span> 07 / 02 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: CORPORATE
+                            IMAGE 09
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Corporate furniture 7\cc10beb5db86696c61d297daa74821c9.jpg"
+                  alt="Modern corporate office furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Corporate Workspace </span>
+
+                  <span> 07 / 03 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: CORPORATE
+                            IMAGE 09
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Corporate furniture 7\31461791f65d6fd81917edc92934824b.jpg"
+                  alt="Modern corporate office furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Corporate Workspace </span>
+
+                  <span> 07 / 04 </span>
+                </div>
+              </div>
+
+              <!-- ADD MORE OFFICE IMAGES HERE -->
+            </div>
+
+            <p class="gallery-scroll-note">Swipe / scroll right →</p>
+          </article>
+
+          <!-- =================================================
+                     CATEGORY 08 — CUSTOM FURNITURE
+                ================================================== -->
+
+          <article class="category-section">
+            <div class="category-top">
+              <div>
+                <div class="category-meta">
+                  <span class="category-number"> 08 </span>
+
+                  <!-- EDIT CONTENT HERE -->
+                  <h3 class="category-title">Custom Furniture</h3>
+                </div>
+              </div>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="category-description">
+                One-of-a-kind furniture created around your exact space, style
+                and requirements.
+              </p>
+            </div>
+
+            <div class="category-gallery">
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: CUSTOM FURNITURE
+                            IMAGE 10
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Custom Furniture 8\d24c8d0132d96ded58c28b5c422c84e0.jpg"
+                  alt="Custom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Bespoke Furniture </span>
+
+                  <span> 08 / 01 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: CUSTOM FURNITURE
+                            IMAGE 10
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Custom Furniture 8\IMG-20260915-WA0066[1].jpg"
+                  alt="Custom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Bespoke Furniture </span>
+
+                  <span> 08 / 02 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: CUSTOM FURNITURE
+                            IMAGE 10
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Custom Furniture 8\IMG-20260915-WA0110.jpg"
+                  alt="Custom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Bespoke Furniture </span>
+
+                  <span> 08 / 03 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: CUSTOM FURNITURE
+                            IMAGE 10
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Custom Furniture 8\ChatGPT Image Sep 5, 2026, 03_59_59 PM.png"
+                  alt="Custom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Bespoke Furniture </span>
+
+                  <span> 08 / 04 </span>
+                </div>
+              </div>
+              <div class="gallery-card">
+                <!--
+                            ADD YOUR IMAGE HERE
+                            CATEGORY: CUSTOM FURNITURE
+                            IMAGE 10
+                            -->
+                <img
+                  class="gallery-image"
+                  src="Cube & Craft int\Custom Furniture 8\ChatGPT Image Aug 13, 2026, 09_39_48 AM.png"
+                  alt="Custom furniture"
+                  loading="lazy"
+                />
+
+                <!-- EDIT CONTENT HERE -->
+                <div class="gallery-caption">
+                  <span> Bespoke Furniture </span>
+
+                  <span> 08 / 05 </span>
+                </div>
+              </div>
+
+              <!-- ADD MORE CUSTOM FURNITURE IMAGES HERE -->
+            </div>
+
+            <p class="gallery-scroll-note">Swipe / scroll right →</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================================================
+             WHY CHOOSE US
+        ================================================== -->
+
+      <section id="work" class="section" aria-labelledby="why-title">
+        <div class="container why-grid">
+          <div>
+            <p class="eyebrow">Why choose us</p>
+
+            <!-- EDIT CONTENT HERE -->
+            <h2 id="why-title" class="section-title">
+              Built around your space.
+            </h2>
+
+            <!-- EDIT CONTENT HERE -->
+            <p class="section-description">
+              Every project is different. That's why we don't believe in
+              one-size-fits-all furniture.
+            </p>
+          </div>
+
+          <div class="why-list">
+            <article class="why-item">
+              <span class="why-number"> 01 </span>
+
+              <div>
+                <!-- EDIT CONTENT HERE -->
+                <h3 class="why-title">Made for your space</h3>
+
+                <!-- EDIT CONTENT HERE -->
+                <p class="why-text">
+                  Every measurement, finish and detail is considered around your
+                  requirements.
+                </p>
+              </div>
+            </article>
+
+            <article class="why-item">
+              <span class="why-number"> 02 </span>
+
+              <div>
+                <!-- EDIT CONTENT HERE -->
+                <h3 class="why-title">Quality materials</h3>
+
+                <!-- EDIT CONTENT HERE -->
+                <p class="why-text">
+                  We carefully select materials and finishes that balance
+                  beauty, durability and everyday practicality.
+                </p>
+              </div>
+            </article>
+
+            <article class="why-item">
+              <span class="why-number"> 03 </span>
+
+              <div>
+                <!-- EDIT CONTENT HERE -->
+                <h3 class="why-title">Attention to detail</h3>
+
+                <!-- EDIT CONTENT HERE -->
+                <p class="why-text">
+                  From hardware to finishing touches, every element receives the
+                  attention it deserves.
+                </p>
+              </div>
+            </article>
+
+            <article class="why-item">
+              <span class="why-number"> 04 </span>
+
+              <div>
+                <!-- EDIT CONTENT HERE -->
+                <h3 class="why-title">One team, one vision</h3>
+
+                <!-- EDIT CONTENT HERE -->
+                <p class="why-text">
+                  We stay involved from concept to installation so your vision
+                  remains consistent throughout the project.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+             PROCESS
+        ================================================== -->
+
+      <section
+        id="process"
+        class="section process"
+        aria-labelledby="process-title"
+      >
+        <div class="container">
+          <p class="eyebrow">How it works</p>
+
+          <!-- EDIT CONTENT HERE -->
+          <h2 id="process-title" class="section-title">
+            From idea to installation.
+          </h2>
+
+          <div class="process-grid">
+            <article class="process-item">
+              <span class="process-number"> 01 </span>
+
+              <!-- EDIT CONTENT HERE -->
+              <h3 class="process-title">Discuss</h3>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="process-text">
+                Tell us about your space, requirements, preferences and budget.
+              </p>
+            </article>
+
+            <article class="process-item">
+              <span class="process-number"> 02 </span>
+
+              <!-- EDIT CONTENT HERE -->
+              <h3 class="process-title">Design</h3>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="process-text">
+                We develop a thoughtful furniture solution around your space.
+              </p>
+            </article>
+
+            <article class="process-item">
+              <span class="process-number"> 03 </span>
+
+              <!-- EDIT CONTENT HERE -->
+              <h3 class="process-title">Craft</h3>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="process-text">
+                Our team turns the design into carefully crafted furniture.
+              </p>
+            </article>
+
+            <article class="process-item">
+              <span class="process-number"> 04 </span>
+
+              <!-- EDIT CONTENT HERE -->
+              <h3 class="process-title">Install</h3>
+
+              <!-- EDIT CONTENT HERE -->
+              <p class="process-text">
+                We deliver and install your furniture, ready for you to enjoy.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+             TESTIMONIAL
+        ================================================== -->
+
+      <section class="section" aria-labelledby="testimonial-title">
+        <div class="container">
+          <p class="eyebrow" style="text-align: center">Client stories</p>
+
+          <div class="testimonial">
+            <div class="quote-mark">“</div>
+
+            <!-- EDIT CONTENT HERE -->
+            <blockquote id="testimonial-title" class="quote">
+              They understood exactly what we wanted and transformed our space
+              into something that feels completely ours.
+            </blockquote>
+
+            <!-- EDIT CONTENT HERE -->
+            <p class="customer">— Priya & Rahul · Residential Project</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+             CTA
+        ================================================== -->
+
+      <section id="contact" class="cta" aria-labelledby="cta-title">
+        <div class="container">
+          <!-- EDIT CONTENT HERE -->
+          <h2 id="cta-title" class="cta-title">
+            Let's create something beautiful.
+          </h2>
+
+          <!-- EDIT CONTENT HERE -->
+          <p class="cta-text">
+            Have a home, office or space in mind? Tell us what you're imagining
+            and let's bring it to life.
+          </p>
+
+          <!--
+                =================================================
+                EDIT PHONE NUMBER HERE
+
+                Replace:
+                +910000000000
+
+                with your real WhatsApp / phone number.
+                =================================================
+                -->
+
+          <a href="tel:+910000000000" class="button"> Start a Conversation </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <!-- EDIT CONTENT HERE -->
+            <div class="footer-logo">Cube & Craft Int.</div>
+
+            <!-- EDIT CONTENT HERE -->
+            <p class="footer-description">
+              Thoughtfully designed furniture for homes, offices and spaces made
+              for living.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="footer-heading">Explore</h2>
+
+            <ul class="footer-links">
+              <li>
+                <a href="#about"> About </a>
+              </li>
+
+              <li>
+                <a href="#work"> Our Work </a>
+              </li>
+
+              <li>
+                <a href="#categories"> Furniture </a>
+              </li>
+
+              <li>
+                <a href="#process"> Process </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="footer-heading">Contact</h2>
+
+            <ul class="footer-links">
+              <!-- EDIT CONTENT HERE -->
+              <li>+91 00000 00000</li>
+
+              <!-- EDIT CONTENT HERE -->
+              <li>hello@atelier.com</li>
+
+              <!-- EDIT CONTENT HERE -->
+              <li>Indore, India</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="footer-heading">Social</h2>
+
+            <ul class="footer-links">
+              <!-- EDIT SOCIAL LINKS / CONTENT HERE -->
+
+              <li>Instagram</li>
+
+              <li>Facebook</li>
+
+              <li>WhatsApp</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <!-- EDIT CONTENT HERE -->
+          <span> © 2026 Cube & Craft Int. Furniture </span>
+
+          <!-- EDIT CONTENT HERE -->
+          <span> Crafted with intention. </span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+      /*
+        =====================================================
+        MOBILE MENU
+        =====================================================
+        */
+
+      const menuButton = document.querySelector(".menu-button");
+
+      const navLinks = document.querySelector(".nav-links");
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("active");
+
+        menuButton.setAttribute("aria-expanded", isOpen);
+
+        menuButton.textContent = isOpen ? "✕" : "☰";
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+
+          menuButton.setAttribute("aria-expanded", "false");
+
+          menuButton.textContent = "☰";
+        });
+      });
+
+      /*
+        =====================================================
+        HORIZONTAL CATEGORY GALLERIES
+
+        The galleries already support:
+        - Mouse wheel
+        - Trackpad
+        - Touch swipe
+        - Horizontal scrollbar
+
+        The code below additionally converts vertical mouse-wheel
+        movement into horizontal scrolling when the cursor is
+        over a category gallery.
+        =====================================================
+        */
+
+      document.querySelectorAll(".category-gallery").forEach((gallery) => {
+        gallery.addEventListener(
+          "wheel",
+          (event) => {
+            if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+              event.preventDefault();
+
+              gallery.scrollLeft += event.deltaY;
+            }
+          },
+          {
+            passive: false,
+          },
+        );
+      });
+    </script>
+  </body>
+</html>
+<!-- What changed
+The main change is the Furniture Categories section. Instead of one long horizontal row containing all categories, it is now:
+
+Furniture for every space.
+
+01  Modular Kitchens
+    [ IMAGE ] [ IMAGE ] [ IMAGE ] →→→
+
+02  Bedrooms
+    [ IMAGE ] [ IMAGE ] [ IMAGE ] →→→
+
+03  Living Rooms
+    [ IMAGE ] [ IMAGE ] [ IMAGE ] →→→
+
+04  Dining Spaces
+    [ IMAGE ] [ IMAGE ] [ IMAGE ] →→→
+
+05  Wardrobes & Storage
+    [ IMAGE ] [ IMAGE ] [ IMAGE ] →→→
+
+06  TV Units
+    [ IMAGE ] [ IMAGE ] [ IMAGE ] →→→
+
+07  Corporate Furniture
+    [ IMAGE ] [ IMAGE ] [ IMAGE ] →→→
+
+08  Custom Furniture
+    [ IMAGE ] [ IMAGE ] [ IMAGE ] →→→
+So the categories themselves are vertical, while the images within each category scroll horizontally to the right.
+
+Where you add your images
+I've deliberately added comments such as:
+
+ADD YOUR IMAGE HERE
+CATEGORY: MODULAR KITCHENS
+IMAGE 03
+
+Just replace:
+
+src="images/modular-kitchen.jpg"
+with your actual image path.
+
+For example:
+
+src="images/my-kitchen-project.jpg"
+If you want multiple images inside one category, copy another .gallery-card: -->
