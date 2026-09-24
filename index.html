@@ -138,8 +138,8 @@
 
       .logo {
         font-family: serif;
-        font-size: 2rem;
-        letter-spacing: 0.02em;
+        font-size: 1.5rem;
+        letter-spacing: 0.01em;
       }
 
       .nav-links {
@@ -786,18 +786,22 @@
         .section {
           padding: 65px 0;
         }
-        .nav {
-  position: relative;
-}
+       .nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-        .menu-button {
-  display: block;
-  position: absolute;
-  right: 45px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 30;
-}
+  .menu-button {
+    display: block;
+    position: static;
+    transform: none;
+    margin-left: auto;
+    margin-right: 15px;
+    z-index: 30;
+  }
 
 
         .hero-content {
